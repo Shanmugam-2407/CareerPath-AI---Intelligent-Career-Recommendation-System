@@ -1,0 +1,24 @@
+{
+  "plan_id": "775d4eb3-f5fe-4534-b830-f1e29a5715ba",
+  "target_career": "Data Science",
+  "last_updated": "2026-10-28T16:54:28.303340+00:00",
+  "completed_skills": [
+    "Python",
+    "SQL"
+  ],
+  "remaining_skills": [
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Statistics",
+    "Machine Learning",
+    "Scikit-learn",
+    "Deep Learning",
+    "Power BI"
+  ],
+  "completed_tasks": [
+    "Deep Dive into Theoretical Architecture"
+  ],
+  "completed_projects": [],
+  "overall_completion_percentage": 18.3
+}

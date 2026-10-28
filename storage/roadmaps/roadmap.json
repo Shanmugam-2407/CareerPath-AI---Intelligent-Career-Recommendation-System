@@ -1,0 +1,481 @@
+{
+  "plan_id": "775d4eb3-f5fe-4534-b830-f1e29a5715ba",
+  "created_at": "2026-10-28T16:54:28.264878+00:00",
+  "user_name": "Sarah Connor",
+  "target_career": "Data Science",
+  "available_hours_per_day": 3.0,
+  "timeline_months": 6,
+  "skill_gap": {
+    "target_career": "Data Science",
+    "canonical_domain": "Data Science",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+      "Statistics",
+      "Machine Learning",
+      "Scikit-learn",
+      "Deep Learning",
+      "Power BI"
+    ],
+    "already_known": [
+      "Python",
+      "SQL"
+    ],
+    "missing_skills": [
+      "Deep Learning",
+      "Machine Learning",
+      "Matplotlib",
+      "NumPy",
+      "Pandas",
+      "Power BI",
+      "Scikit-learn",
+      "Statistics"
+    ],
+    "additional_skills": [],
+    "match_percentage": 20.0,
+    "known_count": 2,
+    "missing_count": 8,
+    "total_required_count": 10,
+    "next_step": "Master fundamental Deep Learning and begin introductory practice modules."
+  },
+  "roadmap": {
+    "candidate_name": "Candidate",
+    "target_career": "Data Science",
+    "timeline_months": 6,
+    "weekly_study_hours": 21.0,
+    "overview": "A targeted 6-month engineering pathway designed to elevate you into a Data Science role, studying 3.0 hours daily.",
+    "monthly_modules": [
+      {
+        "month": 1,
+        "title": "Month 1: Foundations & Data Wrangling",
+        "focus_skills": [
+          "Python",
+          "Pandas",
+          "NumPy"
+        ],
+        "learning_objective": "Attain industry competency in Python, Pandas, NumPy with verified benchmarks.",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Week 1: Practical Pandas Deep Dive",
+            "topics": [
+              "Pandas Core Architecture",
+              "Hands-on coding with NumPy",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Pandas"
+          },
+          {
+            "week": 2,
+            "title": "Week 2: Practical NumPy Deep Dive",
+            "topics": [
+              "NumPy Core Architecture",
+              "Hands-on coding with Data Wrangling",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering NumPy"
+          },
+          {
+            "week": 3,
+            "title": "Week 3: Practical Data Wrangling Deep Dive",
+            "topics": [
+              "Data Wrangling Core Architecture",
+              "Hands-on coding with Python",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Data Wrangling"
+          },
+          {
+            "week": 4,
+            "title": "Week 4: Practical Python Deep Dive",
+            "topics": [
+              "Python Core Architecture",
+              "Hands-on coding with Pandas",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Python"
+          }
+        ]
+      },
+      {
+        "month": 2,
+        "title": "Month 2: Statistical Analysis & Visualization",
+        "focus_skills": [
+          "Statistics",
+          "Matplotlib",
+          "Seaborn"
+        ],
+        "learning_objective": "Attain industry competency in Statistics, Matplotlib, Seaborn with verified benchmarks.",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Week 1: Practical Matplotlib Deep Dive",
+            "topics": [
+              "Matplotlib Core Architecture",
+              "Hands-on coding with Seaborn",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Matplotlib"
+          },
+          {
+            "week": 2,
+            "title": "Week 2: Practical Seaborn Deep Dive",
+            "topics": [
+              "Seaborn Core Architecture",
+              "Hands-on coding with Hypothesis Testing",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Seaborn"
+          },
+          {
+            "week": 3,
+            "title": "Week 3: Practical Hypothesis Testing Deep Dive",
+            "topics": [
+              "Hypothesis Testing Core Architecture",
+              "Hands-on coding with Statistics",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Hypothesis Testing"
+          },
+          {
+            "week": 4,
+            "title": "Week 4: Practical Statistics Deep Dive",
+            "topics": [
+              "Statistics Core Architecture",
+              "Hands-on coding with Matplotlib",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Statistics"
+          }
+        ]
+      },
+      {
+        "month": 3,
+        "title": "Month 3: Supervised Machine Learning",
+        "focus_skills": [
+          "Scikit-learn",
+          "Regression",
+          "Classification"
+        ],
+        "learning_objective": "Attain industry competency in Scikit-learn, Regression, Classification with verified benchmarks.",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Week 1: Practical Regression Deep Dive",
+            "topics": [
+              "Regression Core Architecture",
+              "Hands-on coding with Classification",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Regression"
+          },
+          {
+            "week": 2,
+            "title": "Week 2: Practical Classification Deep Dive",
+            "topics": [
+              "Classification Core Architecture",
+              "Hands-on coding with Model Evaluation",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Classification"
+          },
+          {
+            "week": 3,
+            "title": "Week 3: Practical Model Evaluation Deep Dive",
+            "topics": [
+              "Model Evaluation Core Architecture",
+              "Hands-on coding with Scikit-learn",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Model Evaluation"
+          },
+          {
+            "week": 4,
+            "title": "Week 4: Practical Scikit-learn Deep Dive",
+            "topics": [
+              "Scikit-learn Core Architecture",
+              "Hands-on coding with Regression",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Scikit-learn"
+          }
+        ]
+      },
+      {
+        "month": 4,
+        "title": "Month 4: Ensemble Methods & Unsupervised Learning",
+        "focus_skills": [
+          "Random Forests",
+          "XGBoost",
+          "Clustering"
+        ],
+        "learning_objective": "Attain industry competency in Random Forests, XGBoost, Clustering with verified benchmarks.",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Week 1: Practical XGBoost Deep Dive",
+            "topics": [
+              "XGBoost Core Architecture",
+              "Hands-on coding with Clustering",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering XGBoost"
+          },
+          {
+            "week": 2,
+            "title": "Week 2: Practical Clustering Deep Dive",
+            "topics": [
+              "Clustering Core Architecture",
+              "Hands-on coding with PCA",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Clustering"
+          },
+          {
+            "week": 3,
+            "title": "Week 3: Practical PCA Deep Dive",
+            "topics": [
+              "PCA Core Architecture",
+              "Hands-on coding with Random Forests",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering PCA"
+          },
+          {
+            "week": 4,
+            "title": "Week 4: Practical Random Forests Deep Dive",
+            "topics": [
+              "Random Forests Core Architecture",
+              "Hands-on coding with XGBoost",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Random Forests"
+          }
+        ]
+      },
+      {
+        "month": 5,
+        "title": "Month 5: Deep Learning Fundamentals",
+        "focus_skills": [
+          "PyTorch",
+          "Neural Networks",
+          "CNNs"
+        ],
+        "learning_objective": "Attain industry competency in PyTorch, Neural Networks, CNNs with verified benchmarks.",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Week 1: Practical Neural Networks Deep Dive",
+            "topics": [
+              "Neural Networks Core Architecture",
+              "Hands-on coding with CNNs",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Neural Networks"
+          },
+          {
+            "week": 2,
+            "title": "Week 2: Practical CNNs Deep Dive",
+            "topics": [
+              "CNNs Core Architecture",
+              "Hands-on coding with Computer Vision",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering CNNs"
+          },
+          {
+            "week": 3,
+            "title": "Week 3: Practical Computer Vision Deep Dive",
+            "topics": [
+              "Computer Vision Core Architecture",
+              "Hands-on coding with PyTorch",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Computer Vision"
+          },
+          {
+            "week": 4,
+            "title": "Week 4: Practical PyTorch Deep Dive",
+            "topics": [
+              "PyTorch Core Architecture",
+              "Hands-on coding with Neural Networks",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering PyTorch"
+          }
+        ]
+      },
+      {
+        "month": 6,
+        "title": "Month 6: Deployment, Portfolio & Interview Prep",
+        "focus_skills": [
+          "FastAPI",
+          "Docker",
+          "Model Monitoring"
+        ],
+        "learning_objective": "Attain industry competency in FastAPI, Docker, Model Monitoring with verified benchmarks.",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Week 1: Practical Docker Deep Dive",
+            "topics": [
+              "Docker Core Architecture",
+              "Hands-on coding with Model Monitoring",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Docker"
+          },
+          {
+            "week": 2,
+            "title": "Week 2: Practical Model Monitoring Deep Dive",
+            "topics": [
+              "Model Monitoring Core Architecture",
+              "Hands-on coding with Portfolio Capstone",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Model Monitoring"
+          },
+          {
+            "week": 3,
+            "title": "Week 3: Practical Portfolio Capstone Deep Dive",
+            "topics": [
+              "Portfolio Capstone Core Architecture",
+              "Hands-on coding with FastAPI",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering Portfolio Capstone"
+          },
+          {
+            "week": 4,
+            "title": "Week 4: Practical FastAPI Deep Dive",
+            "topics": [
+              "FastAPI Core Architecture",
+              "Hands-on coding with Docker",
+              "Real-world unit tests and debugging"
+            ],
+            "key_milestone": "Deliver a working code artifact mastering FastAPI"
+          }
+        ]
+      }
+    ]
+  },
+  "daily_tasks": [
+    {
+      "task_title": "Deep Dive into Theoretical Architecture",
+      "task_type": "Theory",
+      "description": "Read documentation and academic/engineering blogs on underlying mathematical and architectural principles.",
+      "estimated_duration": "1 hour",
+      "difficulty": "Intermediate",
+      "topic": "Core Architecture",
+      "expected_outcome": "Complete conceptual notes and flashcards on core trade-offs."
+    },
+    {
+      "task_title": "Hands-on Script Implementation",
+      "task_type": "Coding",
+      "description": "Write clean, modular Python functions implementing the algorithm or endpoint from scratch with error handling.",
+      "estimated_duration": "1 hour",
+      "difficulty": "Intermediate",
+      "topic": "Coding Implementation",
+      "expected_outcome": "Executable script with clean PEP8 formatting and type hints."
+    },
+    {
+      "task_title": "Problem Solving & Test Verification",
+      "task_type": "Practice",
+      "description": "Solve 2 real-world problem statements and write automated test cases validating edge-case behavior.",
+      "estimated_duration": "1 hour",
+      "difficulty": "Intermediate",
+      "topic": "Applied Practice",
+      "expected_outcome": "Green test suite with 90%+ branch coverage."
+    }
+  ],
+  "projects": [
+    {
+      "level": "Mini Project",
+      "project_title": "Automated Beginner). Data Audit and Diagnostic Tool",
+      "problem_statement": "Manual validation of dirty production data streams causes silent pipeline degradations.",
+      "objective": "Build a modular CLI and script that inspects data schema integrity, statistical anomalies, and missing attributes.",
+      "features": [
+        "Automated statistical profiling",
+        "Outlier identification via Z-score & IQR",
+        "Automated JSON report export"
+      ],
+      "dataset_requirement": "Kaggle Open Data or synthetic CSV generator",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "NumPy"
+      ],
+      "ml_ai_approach": "Statistical hypothesis testing and parametric anomaly detection",
+      "development_steps": [
+        "Design schema validator",
+        "Implement IQR outlier detector",
+        "Add unit test suite",
+        "Package into a reusable module"
+      ],
+      "expected_output": "Modular Python library with comprehensive CLI report output",
+      "resume_value": "Engineered automated data audit pipeline catching schema anomalies with 99% fidelity."
+    },
+    {
+      "level": "Intermediate Project",
+      "project_title": "Predictive Beginner). Intelligence API & Interactive Dashboard",
+      "problem_statement": "Stakeholders lack immediate predictive insights when querying operational business metrics.",
+      "objective": "Train a multi-class predictive model, wrap it in a high-throughput REST API, and expose an interactive Plotly dashboard.",
+      "features": [
+        "Supervised ML classification pipeline",
+        "REST API endpoints with Pydantic validation",
+        "Interactive real-time Streamlit UI with Plotly charts"
+      ],
+      "dataset_requirement": "UCI Machine Learning Repository or Kaggle Industry Dataset (10k+ rows)",
+      "technologies": [
+        "Python",
+        "Scikit-learn",
+        "FastAPI",
+        "Streamlit",
+        "Plotly"
+      ],
+      "ml_ai_approach": "Ensemble Gradient Boosting (XGBoost) with hyperparameter tuning",
+      "development_steps": [
+        "Data cleaning and TF-IDF / one-hot feature encoding",
+        "Train & evaluate cross-validated ML models",
+        "Develop FastAPI inference routes",
+        "Build Streamlit dashboard for real-time predictions"
+      ],
+      "expected_output": "Fully connected web application with sub-50ms inference latency",
+      "resume_value": "Architected end-to-end ML service with FastAPI & Streamlit serving 100+ requests/sec."
+    },
+    {
+      "level": "Capstone Project",
+      "project_title": "Enterprise Production Beginner). Platform with Adaptive Learning",
+      "problem_statement": "Enterprises struggle to monitor, version, and orchestrate ML/AI workflows with containerized reproducibility.",
+      "objective": "Architect a production-grade microservice incorporating model tracking, automated retraining, and cloud containerization.",
+      "features": [
+        "End-to-end ML/AI inference pipeline",
+        "Containerized microservices with Docker",
+        "Automated CI/CD test runner with Pytest",
+        "Live model monitoring and drift telemetry"
+      ],
+      "dataset_requirement": "Enterprise production logs or Kaggle multi-gigabyte dataset",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "Joblib",
+        "Pytest",
+        "Streamlit"
+      ],
+      "ml_ai_approach": "Deep Neural Network / Hybrid Ensemble with vector embeddings",
+      "development_steps": [
+        "Container architecture design and Dockerfile creation",
+        "Pipeline persistence with Joblib and metadata schema",
+        "Integration testing suite with 85%+ code coverage",
+        "Production deployment configuration"
+      ],
+      "expected_output": "Dockerized enterprise application ready for cloud deployment",
+      "resume_value": "Spearheaded enterprise production platform achieving full test automation and Dockerized deployment."
+    }
+  ],
+  "ai_explanation": "Your background and demonstrated programming proficiency align strongly with this domain. By systematically closing the identified skill gaps over your specified study timeline, you establish verifiable readiness for top-tier roles."
+}
