@@ -329,3 +329,4 @@ def get_llm_provider() -> BaseLLMProvider:
     else:
         # High quality offline fallback
         return MockLLMProvider()
+

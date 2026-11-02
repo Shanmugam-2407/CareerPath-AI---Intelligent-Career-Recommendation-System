@@ -119,3 +119,4 @@ class SkillGapService:
             "total_required_count": total_req,
             "next_step": next_step
         }
+

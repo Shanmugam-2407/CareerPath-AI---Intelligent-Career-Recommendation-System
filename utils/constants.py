@@ -255,3 +255,4 @@ DOMAIN_SKILLS_MAP = {
         "Swift", "Git", "REST API"
     ]
 }
+

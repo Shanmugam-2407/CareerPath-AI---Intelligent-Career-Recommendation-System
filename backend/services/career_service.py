@@ -68,3 +68,4 @@ class CareerService:
             "recommended_career": prediction["recommended_career"],
             "target_career": target
         }
+

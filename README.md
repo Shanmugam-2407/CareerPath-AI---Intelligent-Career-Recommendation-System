@@ -299,3 +299,4 @@ docker run -p 8000:8000 -p 8501:8501 career-path-generator
 > - Benchmarked Logistic Regression, Random Forest, and XGBoost on 1,100+ multi-domain profiles, persisting optimal models via Joblib to achieve 98%+ macro F1-score.
 > - Implemented an NLP skill-gap engine normalizing free-form inputs against a standardized technical taxonomy with Plotly visualizations.
 > - Engineered a decoupled FastAPI REST backend with Pydantic schemas, atomic local JSON persistence, and an adaptive learning engine that dynamically evolves study plans based on student progress.
+

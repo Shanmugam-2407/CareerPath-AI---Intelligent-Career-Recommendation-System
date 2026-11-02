@@ -43,3 +43,4 @@ def validate_user_profile_data(
 def is_valid_domain(domain: str) -> bool:
     """Check if domain is recognized."""
     return domain in CAREER_DOMAINS
+

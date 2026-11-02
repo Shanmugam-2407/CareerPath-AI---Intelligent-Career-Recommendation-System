@@ -54,3 +54,4 @@ class SkillGapResponse(BaseModel):
     missing_count: int
     total_required_count: int
     next_step: str
+

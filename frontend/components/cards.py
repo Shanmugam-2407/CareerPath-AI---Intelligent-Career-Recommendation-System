@@ -1,100 +1,243 @@
 """
-Streamlit Card and Badge UI components.
+Streamlit Card, Badge, and Interactive UI Components.
+Implements modern SaaS-style glassmorphism cards, tiered project cards,
+interactive skill badges, and progress milestones.
 """
 import streamlit as st
+from typing import List, Dict, Any, Optional
+from frontend.utils.ui_helpers import render_html
 
 
-def render_metric_card(title: str, value: str, subtext: str = "", delta: str = None):
-    """Renders a styled metric card."""
-    st.markdown(
-        f"""
-        <div style="
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 18px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-            margin-bottom: 15px;
-        ">
-            <div style="font-size: 0.85rem; color: #94a3b8; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">{title}</div>
-            <div style="font-size: 1.8rem; font-weight: 700; color: #38bdf8; margin: 4px 0;">{value}</div>
-            <div style="font-size: 0.82rem; color: #cbd5e1;">{subtext}</div>
+def render_workflow_stepper(active_page: str):
+    """Renders a responsive 6-step interactive visual wizard at the top of the page."""
+    steps = [
+        ("Overview", "🏠 Overview"),
+        ("Profile", "👤 Profile"),
+        ("Prediction", "🤖 Prediction"),
+        ("Roadmap", "🗺️ Roadmap"),
+        ("Tasks", "✅ Tasks"),
+        ("Projects", "🚀 Projects"),
+        ("Progress", "📈 Progress")
+    ]
+
+    active_idx = 0
+    for idx, (key, label) in enumerate(steps):
+        if key.lower() in active_page.lower():
+            active_idx = idx
+            break
+
+    stepper_html = '<div class="stepper-container">'
+    for idx, (key, label) in enumerate(steps):
+        status_class = ""
+        if idx < active_idx:
+            status_class = "completed"
+            circle_content = "✓"
+        elif idx == active_idx:
+            status_class = "active"
+            circle_content = str(idx + 1)
+        else:
+            circle_content = str(idx + 1)
+
+        stepper_html += f"""<div class="step-item {status_class}"><div class="step-circle">{circle_content}</div><span>{label}</span></div>"""
+        if idx < len(steps) - 1:
+            divider_class = "filled" if idx < active_idx else ""
+            stepper_html += f'<div class="step-divider {divider_class}"></div>'
+
+    stepper_html += '</div>'
+    render_html(stepper_html)
+
+
+def render_metric_card(
+    title: str,
+    value: str,
+    subtext: str = "",
+    delta: Optional[str] = None,
+    icon: str = "📊",
+    accent: str = "cyan"
+):
+    """Renders an interactive high-contrast metric card with glowing accent."""
+    accents = {
+        "cyan": ("#06b6d4", "rgba(6, 182, 212, 0.2)"),
+        "sky": ("#38bdf8", "rgba(56, 189, 248, 0.2)"),
+        "emerald": ("#10b981", "rgba(16, 185, 129, 0.2)"),
+        "purple": ("#8b5cf6", "rgba(139, 92, 246, 0.2)"),
+        "amber": ("#f59e0b", "rgba(245, 158, 11, 0.2)"),
+        "rose": ("#f43f5e", "rgba(244, 63, 94, 0.2)")
+    }
+    color, glow = accents.get(accent, ("#38bdf8", "rgba(56, 189, 248, 0.2)"))
+
+    delta_html = ""
+    if delta:
+        delta_html = f'<span style="background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 2px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; margin-left: 8px;">{delta}</span>'
+
+    card_html = f"""
+    <div class="metric-card-pro" style="border-left: 4px solid {color};">
+        <div class="metric-label-pro">
+            <span>{icon}</span>
+            <span>{title}</span>
+            {delta_html}
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        <div class="metric-value-pro" style="color: {color};">{value}</div>
+        <div class="metric-subtext-pro">
+            <span>{subtext}</span>
+        </div>
+    </div>
+    """
+    render_html(card_html)
 
 
-def render_skill_badges(known_skills: list, missing_skills: list):
-    """Renders visual pills for already known vs missing skills."""
-    st.markdown("#### Skill Inventory Analysis")
+def render_skill_badges(known_skills: List[str], missing_skills: List[str]):
+    """Renders visual pills for already known vs missing skills with clean categorized chips."""
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(f"**Already Mastered ({len(known_skills)})**")
+        known_header = f"""
+        <div style="background: rgba(6, 78, 59, 0.2); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="font-weight: 700; color: #34d399; font-size: 0.95rem;">
+                    ✅ Verified Mastered Skills
+                </div>
+                <span class="pill-badge pill-emerald">{len(known_skills)} Skills</span>
+            </div>
+        """
         if known_skills:
-            badges_html = " ".join([
-                f'<span style="background-color: #064e3b; color: #6ee7b7; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin: 3px 2px; border: 1px solid #059669;">✓ {s}</span>'
+            badges = "".join([
+                f'<span style="background-color: rgba(6, 78, 59, 0.6); color: #6ee7b7; padding: 5px 11px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; display: inline-block; margin: 3px; border: 1px solid rgba(16, 185, 129, 0.4);">✓ {s}</span>'
                 for s in known_skills
             ])
-            st.markdown(badges_html, unsafe_allow_html=True)
+            known_html = known_header + f'<div style="line-height: 1.8;">{badges}</div></div>'
         else:
-            st.info("No prior matching skills detected.")
+            known_html = known_header + '<div style="color: #94a3b8; font-size: 0.85rem;">No prior domain matching skills detected.</div></div>'
+        render_html(known_html)
 
     with col2:
-        st.markdown(f"**Missing Skills to Learn ({len(missing_skills)})**")
+        missing_header = f"""
+        <div style="background: rgba(69, 10, 10, 0.2); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="font-weight: 700; color: #f87171; font-size: 0.95rem;">
+                    🎯 Missing Skills (Target Curriculum)
+                </div>
+                <span class="pill-badge pill-rose">{len(missing_skills)} Needed</span>
+            </div>
+        """
         if missing_skills:
-            badges_html = " ".join([
-                f'<span style="background-color: #450a0a; color: #fca5a5; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin: 3px 2px; border: 1px solid #dc2626;">❌ {s}</span>'
+            badges = "".join([
+                f'<span style="background-color: rgba(69, 10, 10, 0.6); color: #fca5a5; padding: 5px 11px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; display: inline-block; margin: 3px; border: 1px solid rgba(239, 68, 68, 0.4);">⚡ {s}</span>'
                 for s in missing_skills
             ])
-            st.markdown(badges_html, unsafe_allow_html=True)
+            missing_html = missing_header + f'<div style="line-height: 1.8;">{badges}</div></div>'
         else:
-            st.success("You have covered all core skills for this domain!")
+            missing_html = missing_header + '<div style="color: #34d399; font-size: 0.85rem;">Candidate already covers 100% of domain prerequisites!</div></div>'
+        render_html(missing_html)
 
 
-def render_project_card(project: dict):
-    """Renders a comprehensive portfolio project card."""
+def render_project_card(project: Dict[str, Any]):
+    """Renders a comprehensive, production-grade portfolio project card."""
     level = project.get("level", "Project")
     title = project.get("project_title", "Untitled Project")
-    level_colors = {
-        "Mini Project": ("#0284c7", "#e0f2fe"),
-        "Intermediate Project": ("#7c3aed", "#ede9fe"),
-        "Capstone Project": ("#059669", "#d1fae5")
-    }
-    badge_bg, badge_fg = level_colors.get(level, ("#475569", "#f1f5f9"))
 
-    with st.expander(f"📁 {level}: {title}", expanded=(level == "Mini Project")):
-        st.markdown(
-            f"""
-            <span style="background-color: {badge_bg}; color: white; padding: 3px 10px; border-radius: 8px; font-size: 0.8rem; font-weight: bold;">
-                {level}
-            </span>
-            """,
-            unsafe_allow_html=True
-        )
-        st.markdown(f"**Problem Statement:** {project.get('problem_statement', '')}")
-        st.markdown(f"**Objective:** {project.get('objective', '')}")
+    tier_meta = {
+        "Mini Project": {
+            "color": "#0284c7",
+            "bg": "rgba(2, 132, 199, 0.15)",
+            "border": "rgba(2, 132, 199, 0.35)",
+            "icon": "⚡",
+            "phase": "Foundation Milestone (Month 1-2)"
+        },
+        "Intermediate Project": {
+            "color": "#8b5cf6",
+            "bg": "rgba(139, 92, 246, 0.15)",
+            "border": "rgba(139, 92, 246, 0.35)",
+            "icon": "🚀",
+            "phase": "Applied System Milestone (Month 3-4)"
+        },
+        "Capstone Project": {
+            "color": "#10b981",
+            "bg": "rgba(16, 185, 129, 0.15)",
+            "border": "rgba(16, 185, 129, 0.35)",
+            "icon": "🏆",
+            "phase": "Enterprise Production Milestone (Month 5-6)"
+        }
+    }
+
+    meta = tier_meta.get(level, tier_meta["Mini Project"])
+
+    with st.expander(f"{meta['icon']} {level}: {title}", expanded=(level == "Mini Project")):
+        card_header = f"""
+        <div style="
+            display: flex; justify-content: space-between; align-items: center;
+            background: {meta['bg']}; border: 1px solid {meta['border']};
+            border-radius: 10px; padding: 12px 16px; margin-bottom: 16px;
+        ">
+            <div style="font-weight: 700; color: {meta['color']}; font-size: 1.05rem;">
+                {meta['icon']} {level} — <span style="color: #f8fafc;">{title}</span>
+            </div>
+            <div style="font-size: 0.8rem; color: #cbd5e1; font-weight: 600;">
+                {meta['phase']}
+            </div>
+        </div>
+        """
+        render_html(card_header)
+
+        st.markdown(f"**🎯 Problem Statement:** {project.get('problem_statement', '')}")
+        st.markdown(f"**💡 Primary Objective:** {project.get('objective', '')}")
 
         col_a, col_b = st.columns(2)
         with col_a:
-            st.markdown("**Key Features:**")
+            st.markdown("**Key Architectural Features:**")
             for f in project.get("features", []):
                 st.markdown(f"- {f}")
-            st.markdown(f"**Dataset:** `{project.get('dataset_requirement', 'Standard')}`")
+            st.markdown(f"**📦 Recommended Dataset:** `{project.get('dataset_requirement', 'Public Benchmark Dataset')}`")
 
         with col_b:
-            st.markdown("**Technologies Used:**")
-            tech_badges = " ".join([
-                f'<span style="background-color: #1e293b; color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #334155; margin: 2px;">{t}</span>'
+            st.markdown("**Technologies & Frameworks:**")
+            tech_badges = "".join([
+                f'<span style="background-color: rgba(30, 41, 59, 0.8); color: #38bdf8; padding: 3px 9px; border-radius: 6px; font-size: 0.8rem; border: 1px solid rgba(56, 189, 248, 0.3); margin: 3px; display: inline-block;">{t}</span>'
                 for t in project.get("technologies", [])
             ])
-            st.markdown(tech_badges, unsafe_allow_html=True)
-            st.markdown(f"**ML/AI Approach:** {project.get('ml_ai_approach', 'Standard ML')}")
+            render_html(f'<div style="line-height: 2; margin-bottom: 8px;">{tech_badges}</div>')
+            st.markdown(f"**🧠 Approach & Architecture:** {project.get('ml_ai_approach', 'Production ML Pipeline')}")
 
-        st.markdown("**Development Steps:**")
-        for i, step in enumerate(project.get("development_steps", []), 1):
-            st.markdown(f"{i}. {step}")
+        st.markdown("---")
+        st.markdown("**🛠️ Step-by-Step Implementation Guide:**")
+        steps = project.get("development_steps", [])
+        for i, step in enumerate(steps, 1):
+            st.markdown(f"**{i}.** {step}")
 
-        st.info(f"**Expected Output:** {project.get('expected_output', '')}")
-        st.success(f"**Resume Bullet:** *\"{project.get('resume_value', '')}\"*")
+        deliverable_html = f"""
+        <div style="background: rgba(15, 23, 42, 0.6); border-left: 4px solid {meta['color']}; border-radius: 6px; padding: 12px; margin: 12px 0;">
+            <div style="font-size: 0.85rem; color: #94a3b8; font-weight: 600;">EXPECTED DELIVERABLE</div>
+            <div style="color: #f8fafc; font-size: 0.92rem; margin-top: 4px;">{project.get('expected_output', '')}</div>
+        </div>
+        """
+        render_html(deliverable_html)
+
+        resume_bullet = project.get("resume_value", "")
+        resume_html = f"""
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 14px; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: #34d399; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;">💼 Resume Ready Bullet</span>
+                <span style="font-size: 0.75rem; color: #94a3b8;">Copy & Paste to Experience Section</span>
+            </div>
+            <div style="color: #e2e8f0; font-style: italic; font-size: 0.9rem; line-height: 1.4;">
+                "{resume_bullet}"
+            </div>
+        </div>
+        """
+        render_html(resume_html)
+
+
+def render_feature_card(icon: str, title: str, description: str, badge: str = ""):
+    """Renders a feature showcase card for the home/overview page."""
+    badge_html = f'<span class="pill-badge pill-cyan">{badge}</span>' if badge else ""
+    card_html = f"""
+    <div class="saas-card" style="height: 100%;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <div style="font-size: 2rem;">{icon}</div>
+            {badge_html}
+        </div>
+        <div style="font-size: 1.1rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px;">{title}</div>
+        <div style="font-size: 0.88rem; color: #94a3b8; line-height: 1.5;">{description}</div>
+    </div>
+    """
+    render_html(card_html)

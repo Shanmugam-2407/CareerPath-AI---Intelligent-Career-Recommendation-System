@@ -55,3 +55,4 @@ def test_empty_input_handling():
     result = predictor.predict(skills=[], interests="", education="", free_text="")
     assert "recommended_career" in result
     assert result["recommended_career"] in CAREER_DOMAINS
+

@@ -22,3 +22,4 @@ def generate_daily_tasks(req: TasksGenerateRequest):
         return tasks
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to generate tasks: {str(e)}")
+

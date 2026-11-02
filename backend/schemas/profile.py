@@ -22,3 +22,4 @@ class UserProfileCreate(BaseModel):
 class UserProfileResponse(UserProfileCreate):
     normalized_skills: List[str] = Field(default_factory=list)
     created_at: Optional[str] = None
+

@@ -108,3 +108,4 @@ class SkillSimilarityMatcher:
         sims = cosine_similarity(user_vec, self.domain_matrix)[0]
         
         return {domain: round(float(sim), 4) for domain, sim in zip(self.domains, sims)}
+

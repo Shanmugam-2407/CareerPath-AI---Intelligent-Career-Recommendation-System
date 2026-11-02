@@ -50,3 +50,4 @@ def get_profile():
     if not profile_data:
         raise HTTPException(status_code=404, detail="User profile not found. Please create one.")
     return profile_data
+

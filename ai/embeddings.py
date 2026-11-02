@@ -43,3 +43,4 @@ class EmbeddingService:
             return ranked
         except Exception:
             return [{"candidate": c, "similarity": 0.0} for c in candidates]
+

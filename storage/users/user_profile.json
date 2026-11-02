@@ -1,21 +1,25 @@
 {
-  "name": "Sarah Connor",
-  "education": "B.Tech Computer Science",
+  "name": "Alex Morgan",
+  "education": "Final-Year B.Tech IT Student",
   "experience_level": "Beginner",
   "skills": [
     "Python",
-    "SQL"
+    "SQL",
+    "HTML",
+    "CSS"
   ],
-  "interests": "Machine Learning and AI",
+  "interests": "AI, Data Science, Machine Learning, Statistical Analysis",
   "career_goal": "Data Scientist",
   "preferred_domain": "Data Science",
   "study_hours": 3.0,
   "timeline_months": 6,
-  "current_projects": "",
-  "free_text": "I know basic Python and SQL and want to learn Data Science.",
+  "current_projects": "Academic bookstore database in SQL, simple portfolio website in HTML/CSS.",
+  "free_text": "I am a final-year B.Tech IT student. I know Python, SQL, HTML and CSS. I am interested in AI and data. I can study 3 hours per day and want to become a Data Scientist within 6 months.",
   "normalized_skills": [
+    "CSS",
+    "HTML",
     "Python",
     "SQL"
   ],
-  "created_at": "2026-10-28T16:54:28.224427+00:00"
+  "created_at": "2026-10-30T08:27:03.694499+00:00"
 }

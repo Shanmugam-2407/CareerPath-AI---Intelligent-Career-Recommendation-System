@@ -87,3 +87,4 @@ def test_ai_service_adaptive_learning():
         target_career="Data Science"
     )
     assert "Model Evaluation" in rec2["recommendation"]
+

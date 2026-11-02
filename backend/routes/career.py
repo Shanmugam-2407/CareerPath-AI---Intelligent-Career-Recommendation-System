@@ -55,3 +55,4 @@ def analyze_skill_gap(req: SkillGapRequest):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Skill gap analysis failed: {str(e)}")
+

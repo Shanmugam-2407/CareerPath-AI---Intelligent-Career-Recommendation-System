@@ -211,3 +211,4 @@ class RoadmapService:
         """Returns generation history."""
         hist = load_json(DEFAULT_HISTORY, default=[])
         return hist if isinstance(hist, list) else []
+

@@ -98,3 +98,4 @@ def test_progress_endpoints():
     assert get_res.status_code == 200
     get_data = get_res.json()
     assert "adaptive_recommendation" in get_data
+

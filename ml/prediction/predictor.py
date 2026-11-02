@@ -134,3 +134,4 @@ class CareerPredictor:
             "model_used": "ML Classifier (Trained with Joblib persistence)",
             "normalized_skills": all_skills
         }
+

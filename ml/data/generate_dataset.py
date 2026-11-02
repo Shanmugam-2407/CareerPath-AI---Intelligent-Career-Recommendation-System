@@ -131,3 +131,4 @@ if __name__ == "__main__":
     df = generate_samples(samples_per_domain=100)
     df.to_csv(out_path, index=False)
     print(f"Generated {len(df)} samples across {df['domain'].nunique()} domains. Saved to {out_path}")
+

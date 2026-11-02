@@ -66,3 +66,4 @@ def update_json(file_path: Union[str, Path], new_data: Dict[str, Any]) -> Dict[s
     current_data.update(new_data)
     save_json(file_path, current_data)
     return current_data
+

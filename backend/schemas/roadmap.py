@@ -94,3 +94,4 @@ class ProgressResponse(BaseModel):
     completed_projects: List[str] = Field(default_factory=list)
     last_updated: Optional[str] = None
     adaptive_recommendation: Optional[Dict[str, Any]] = None
+

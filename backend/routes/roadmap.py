@@ -66,3 +66,4 @@ def get_generation_history():
         return roadmap_service.get_history()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to load history: {str(e)}")
+
